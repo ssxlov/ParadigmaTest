@@ -35,6 +35,8 @@ document.getElementById('spin_button').focus();
 
 function spin(elem) {
   document.getElementById('taphere').style.display = "none"
+  document.getElementById('spin_button').style.animation = '0'
+  document.getElementById('title').style.animation = '0' 
   document.getElementById('spinbutton').classList.add('buttonclick')
   cols[0].childNodes[0].innerHTML = '<use xlink:href="#icon-a"></use>';
   cols[1].childNodes[1].innerHTML = '<use xlink:href="#icon-a"></use>';
@@ -45,6 +47,10 @@ function spin(elem) {
   elem.classList.toggle('animate', true)
   elem.style.transition = "transform 1s"
   document.getElementById('spinbutton').src = '/src/buttonactive.png'
+  function switchBtn() {
+    document.getElementById('spin_button').innerHTML = '<img src="/src/button.png" alt="" value="spin" id="spinbutton" width="130px">';
+  }
+  setTimeout(switchBtn, 150)
   slots.classList.toggle('spinning', true);
   window.setTimeout(function() {
     for(var i in cols) {
@@ -72,7 +78,7 @@ function spin(elem) {
       document.getElementById("bonus").classList.add('bonus-show'),
       document.getElementById("slots").style.display = "none"
      }
-      setTimeout(show_b,1500)
+      setTimeout(show_b,3500)
       // document.getElementById("chest").style.display = "block"
       // document.getElementById("chest").style.opacity= "1";
       // document.getElementById("chest").style.transition = "opacity 5s";
@@ -86,9 +92,13 @@ function spin(elem) {
   
     // }
   }
-  document.getElementById('icon-a').innerHTML = '<image href="/src/slot1gold.png" class="gold" height="80" width="100"></image>'
+  function getGold() {
+    document.getElementById('icon-a').innerHTML = '<image href="/src/slot1gold.png" class="gold" height="80" width="100"></image>'
+    
+  }
+  setTimeout(getGold, 1000)
   //document.getElementsByClassName('gold').style.animation = 'animation: wiggle 0.4s linear infinite;';
-  document.body.style = 'background: url(/src/background2.png); background-size: 100%; background-repeat: no-repeat;'
+  document.body.style = 'background: url(/src/background2.png);  background-repeat: no-repeat;'
   }, 1500);
   
   window.setTimeout(function() {
@@ -103,7 +113,9 @@ function spinagain() {
   document.getElementById('bonus').classList.remove('bonus-show');
   document.getElementById("slots").style.display = "block";
   document.getElementById('spinbutton').style.display = 'none';
-  document.getElementById('spin_button').innerHTML = '<img src="/src/button.png" alt="" onclick="spin2(this)" value="spin" id="spinbutton">'
+  document.getElementById('spin_button').innerHTML = '<img src="/src/button.png" alt="" onclick="spin2(this)" value="spin" id="spinbutton" width="130px">'
+  document.getElementById('title').style.animation = 'wiggle4 1s linear infinite'
+
   Array.prototype.multiget = function(){
     var args = Array.apply(null, arguments);
     var result = [];
@@ -142,7 +154,6 @@ function spinagain() {
 }
 function spin2(elem) {
   
-  document.getElementById('spinbutton').classList.add('buttonclick')
   cols[0].childNodes[0].innerHTML = '<use xlink:href="#icon-d"></use>';
   cols[1].childNodes[1].innerHTML = '<use xlink:href="#icon-d"></use>';
   cols[2].childNodes[1].innerHTML = '<use xlink:href="#icon-d"></use>';
@@ -150,8 +161,11 @@ function spin2(elem) {
   cols[4].childNodes[0].innerHTML = '<use xlink:href="#icon-d"></use>';
   elem.setAttribute('disabled', true);
   elem.classList.toggle('animate', true)
-  elem.style.transition = "transform 1s"
   document.getElementById('spinbutton').src = '/src/buttonactive.png'
+  function switchBtn() {
+    document.getElementById('spin_button').innerHTML = '<img src="/src/button.png" alt="" value="spin" id="spinbutton" width="130px">';
+  }
+  setTimeout(switchBtn, 100)
   slots.classList.toggle('spinning', true);
   window.setTimeout(function() {
     for(var i in cols) {
@@ -179,7 +193,7 @@ function spin2(elem) {
       document.getElementById("bonus2").classList.add('bonus-show'),
       document.getElementById("slots").style.display = "none"
      }
-      setTimeout(show_b,1500)
+      setTimeout(show_b,3500)
       // document.getElementById("chest").style.display = "block"
       // document.getElementById("chest").style.opacity= "1";
       // document.getElementById("chest").style.transition = "opacity 5s";
@@ -193,9 +207,12 @@ function spin2(elem) {
   
     // }
   }
-  document.getElementById('icon-d').innerHTML = '<image href="/src/slot4win.png" class="gold" height="80" width="100"></image>'
+  function getGold() {
+    document.getElementById('icon-d').innerHTML = '<image href="/src/slot4win.png" class="gold" height="80" width="100"></image>'
+  }
+  setTimeout(getGold, 1000)
   //document.getElementsByClassName('gold').style.animation = 'animation: wiggle 0.4s linear infinite;';
-  document.body.style = 'background: url(/src/background2.png); background-size: 100%; background-repeat: no-repeat;'
+  document.body.style = 'background: url(/src/background2.png); background-repeat: no-repeat;'
   }, 1500);
   
   window.setTimeout(function() {
