@@ -76,9 +76,10 @@ function spin(elem) {
      console.log(icons[Math.floor(Math.random()*icons.length)]);
      function show_b() {
       document.getElementById("bonus").classList.add('bonus-show'),
+      document.body.style = 'background: url(/src/background2.png);  background-repeat: no-repeat;'
       document.getElementById("slots").style.display = "none"
      }
-      setTimeout(show_b,3500)
+      setTimeout(show_b,3200)
       // document.getElementById("chest").style.display = "block"
       // document.getElementById("chest").style.opacity= "1";
       // document.getElementById("chest").style.transition = "opacity 5s";
@@ -96,9 +97,9 @@ function spin(elem) {
     document.getElementById('icon-a').innerHTML = '<image href="/src/slot1gold.png" class="gold" height="80" width="100"></image>'
     
   }
-  setTimeout(getGold, 1000)
+  setTimeout(getGold, 1100)
   //document.getElementsByClassName('gold').style.animation = 'animation: wiggle 0.4s linear infinite;';
-  document.body.style = 'background: url(/src/background2.png);  background-repeat: no-repeat;'
+ 
   }, 1500);
   
   window.setTimeout(function() {
@@ -111,6 +112,7 @@ function spin(elem) {
 }
 function spinagain() {
   document.getElementById('bonus').classList.remove('bonus-show');
+  document.body.style = 'background: url(/src/background1.png); background-repeat: no-repeat;'
   document.getElementById("slots").style.display = "block";
   document.getElementById('spinbutton').style.display = 'none';
   document.getElementById('spin_button').innerHTML = '<img src="/src/button.png" alt="" onclick="spin2(this)" value="spin" id="spinbutton" width="130px">'
@@ -153,7 +155,7 @@ function spinagain() {
   
 }
 function spin2(elem) {
-  
+  document.getElementById('title').style.animation = '0' 
   cols[0].childNodes[0].innerHTML = '<use xlink:href="#icon-d"></use>';
   cols[1].childNodes[1].innerHTML = '<use xlink:href="#icon-d"></use>';
   cols[2].childNodes[1].innerHTML = '<use xlink:href="#icon-d"></use>';
@@ -190,10 +192,11 @@ function spin2(elem) {
       
      console.log(icons[Math.floor(Math.random()*icons.length)]);
      function show_b() {
+      document.body.style = 'background: url(/src/background2.png); background-repeat: no-repeat;'
       document.getElementById("bonus2").classList.add('bonus-show'),
       document.getElementById("slots").style.display = "none"
      }
-      setTimeout(show_b,3500)
+      setTimeout(show_b,3200)
       // document.getElementById("chest").style.display = "block"
       // document.getElementById("chest").style.opacity= "1";
       // document.getElementById("chest").style.transition = "opacity 5s";
@@ -210,9 +213,9 @@ function spin2(elem) {
   function getGold() {
     document.getElementById('icon-d').innerHTML = '<image href="/src/slot4win.png" class="gold" height="80" width="100"></image>'
   }
-  setTimeout(getGold, 1000)
+  setTimeout(getGold, 1100)
   //document.getElementsByClassName('gold').style.animation = 'animation: wiggle 0.4s linear infinite;';
-  document.body.style = 'background: url(/src/background2.png); background-repeat: no-repeat;'
+  
   }, 1500);
   
   window.setTimeout(function() {
